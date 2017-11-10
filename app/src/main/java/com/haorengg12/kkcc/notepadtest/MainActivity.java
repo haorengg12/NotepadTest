@@ -2,6 +2,8 @@ package com.haorengg12.kkcc.notepadtest;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -9,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import org.litepal.tablemanager.Connector;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -29,7 +33,18 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         setContentView(R.layout.activity_main);
+        Connector.getDatabase();//如何判断是否第一次运行
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        NavigationView navview = (NavigationView) findViewById(R.id.nav_view);//加入nav组件
+        navview.setCheckedItem(R.id.setting);
+        navview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent intent = new Intent(MainActivity.this, Setting.class);
+                startActivity(intent);
+                return true;
+            }
+        });
         setSupportActionBar(toolbar);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBar actionBar = getSupportActionBar();
@@ -48,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.plus:
                 Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                 startActivity(intent);
-                finish();
                 break;
             default:
         }

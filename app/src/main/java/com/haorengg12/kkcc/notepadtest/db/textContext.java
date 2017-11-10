@@ -5,8 +5,88 @@ package com.haorengg12.kkcc.notepadtest.db;
  */
 
 public class textContext {
-    private int textNum;
-    private String hour;
-
+    private int textNum;//序号
+    //时间
+    private String textYear;
+    private String textMon;
+    private String textDay;
+    private String textHour;
+    private String textMin;
+    private String textSec;
+    //基础信息
     private String textContext;
+    private String textTag;//text的类别的标签
+
+    //getter & setter
+    public int getTextNum() {
+        return textNum;
+    }
+
+    public void setTextNum(int textNum) {
+        this.textNum = textNum;
+    }
+
+    public String getTextYear() {
+        return textYear;
+    }
+
+    public void setTextYear(String textYear) {
+        this.textYear = textYear;
+    }
+
+    public String getTextMon() {
+        return textMon;
+    }
+
+    public void setTextMon(String textMon) {
+        this.textMon = textMon;
+    }
+
+    public String getTextDay() {
+        return textDay;
+    }
+
+    public void setTextDay(String textDay) {
+        this.textDay = textDay;
+    }
+
+    public String getTextHour() {
+        return textHour;
+    }
+
+    public void setTextHour(String textHour) {
+        this.textHour = textHour;
+    }
+
+    public String getTextMin() {
+        return textMin;
+    }
+
+    public void setTextMin(String textMin) {
+        this.textMin = textMin;
+    }
+
+    public String getTextSec() {
+        return textSec;
+    }
+
+    public void setTextSec(String textSec) {
+        this.textSec = textSec;
+    }
+
+    public String getTextContext() {
+        return textContext;
+    }
+
+    public void setTextContext(String textContext) {
+        this.textContext = textContext;
+    }
+
+    public String getTextTag() {
+        return textTag;
+    }
+
+    public void setTextTag(String textTag) {
+        this.textTag = textTag;
+    }
 }

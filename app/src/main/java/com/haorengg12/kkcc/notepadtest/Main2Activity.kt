@@ -1,6 +1,5 @@
 package com.haorengg12.kkcc.notepadtest
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
@@ -21,12 +20,14 @@ class Main2Activity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             android.R.id.home -> {
-                intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
+                //保存逻辑
+
+                //逻辑
+                super.onBackPressed()//调用防止重复创建活动，配套使用
             }
             else -> return true
         }
         return true
     }
+
 }

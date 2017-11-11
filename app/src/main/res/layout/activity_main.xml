@@ -29,6 +29,48 @@
             android:layout_height="match_parent"
             android:elevation="5dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:elevation="7dp"
+            android:text="测试背景虚化"
+            android:textSize="50sp"
+            android:visibility="gone" />
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/left_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="16dp"
+            android:elevation="9dp"
+            app:fab_addButtonColorNormal="@color/blue_semi_transparent"
+            app:fab_addButtonColorPressed="@color/blue_semi_transparent_pressed"
+            app:fab_addButtonPlusIconColor="@color/white"
+            app:fab_addButtonSize="normal"
+            app:fab_labelStyle="@style/menu_labels_style"
+            app:fab_labelsPosition="right"
+            app:fab_plusIconColor="@color/white">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/kk1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/half_black"
+                app:fab_colorPressed="@color/kk"
+                app:fab_size="mini" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/kk2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/half_black"
+                app:fab_colorPressed="@color/kk"
+                app:fab_size="mini" />
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
     </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView

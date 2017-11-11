@@ -11,12 +11,36 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 import org.litepal.tablemanager.Connector;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Toolbar toolbar;
     private DrawerLayout mDrawerLayout;
+    private FloatingActionsMenu left_labels;
+    private FloatingActionButton kk1;
+    private FloatingActionButton kk2;
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.kk1:
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.kk2:
+                left_labels.collapse();
+                Toast.makeText(this, "22222222222222", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         NavigationView navview = (NavigationView) findViewById(R.id.nav_view);//加入nav组件
         navview.setCheckedItem(R.id.setting);
+        kk1 = (FloatingActionButton) findViewById(R.id.kk1);//小悬浮按钮1
+        kk1.setIcon(R.drawable.ic_note_add_white_24dp);
+        kk2 = (FloatingActionButton) findViewById(R.id.kk2); //小悬浮按钮2
+        kk2.setIcon(R.drawable.ic_delete_white_24dp);
+        left_labels = (FloatingActionsMenu) findViewById(R.id.left_labels);
+        kk1.setOnClickListener(this);
+        kk2.setOnClickListener(this);
+        left_labels.setOnClickListener(this);
+
         navview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -61,8 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 break;
             case R.id.plus:
-                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
-                startActivity(intent);
+
                 break;
             default:
         }

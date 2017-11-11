@@ -34,7 +34,10 @@
             android:name=".Main2Activity"
             android:label="查看"
             android:launchMode="standard"></activity>
-        <activity android:name=".Setting"></activity>
+        <activity
+            android:name=".Setting"
+            android:label="设置"
+            android:launchMode="standard"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.haorengg12.kkcc.notepadtest
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main2.*
@@ -15,6 +16,7 @@ class Main2Activity : AppCompatActivity() {
             actionbar.setDisplayHomeAsUpEnabled(true)
             actionbar.setHomeAsUpIndicator(R.drawable.ic_navigate_before_white_24dp)
         }
+//        cc123.setOnClickListener { view-> Snackbar.make(view,"dadsd",Snackbar.LENGTH_SHORT).show() }
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {

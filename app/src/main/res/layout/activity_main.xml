@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/acac"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -52,7 +53,8 @@
             app:fab_addButtonSize="normal"
             app:fab_labelStyle="@style/menu_labels_style"
             app:fab_labelsPosition="right"
-            app:fab_plusIconColor="@color/white">
+            app:fab_plusIconColor="@color/white"
+            app:layout_dodgeInsetEdges="bottom">
 
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:id="@+id/kk1"
@@ -61,6 +63,7 @@
                 app:fab_colorNormal="@color/half_black"
                 app:fab_colorPressed="@color/kk"
                 app:fab_size="mini" />
+
 
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:id="@+id/kk2"
@@ -71,21 +74,39 @@
                 app:fab_size="mini" />
 
         </com.getbase.floatingactionbutton.FloatingActionsMenu>
-    </android.support.design.widget.CoordinatorLayout>
 
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="left"
-        app:headerLayout="@layout/nav_menu"
-        app:menu="@menu/nav_menu" />
+    </android.support.design.widget.CoordinatorLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="right"
-        android:background="#fff">
+        android:layout_gravity="left"
+        android:background="#fff"
+        android:orientation="vertical">
 
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:headerLayout="@layout/nav_menu"
+            app:menu="@menu/nav_menu" />
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="20dp"
+            android:layout_gravity="bottom|end">
+
+            <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="180dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:background="@drawable/ic_exit_to_app_black_24dp"
+                android:textSize="16sp" />
+        </android.support.design.widget.CoordinatorLayout>
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

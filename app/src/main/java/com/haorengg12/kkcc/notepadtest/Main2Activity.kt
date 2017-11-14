@@ -47,9 +47,9 @@ class Main2Activity : AppCompatActivity() {
                     val calendar = GregorianCalendar()
                     if (kk != null) {
                         //序号
-                        test.textNum = (kk.textNum.toInt() + 1).toString()
+                        test.textNum = kk.textNum.toInt() + 1
                     } else {
-                        test.textNum = "1"
+                        test.textNum = 1
                     }
                     test.textContext = input_text.getText().toString()
                     test.textYear = calendar.get(Calendar.YEAR).toString()

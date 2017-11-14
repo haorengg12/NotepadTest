@@ -75,11 +75,11 @@ public class Main3Activity extends AppCompatActivity {
                     List<textContext> list2 = DataSupport.order("textNum desc").find(textContext.class);
                     list2 = list2.subList(0, 1);
                     for (textContext kk : list2) {
-                        test.setTextNum(String.valueOf(Integer.valueOf(kk.getTextNum()) + 1));
+                        test.setTextNum(kk.getTextNum() + 1);
                     }
                     test.setTextContext(editText.getText().toString());
                     test.setTextYear(String.valueOf(calendar.get(Calendar.YEAR)));
-                    test.setTextMon(String.valueOf(Integer.valueOf(calendar.get(Calendar.MONTH)) + 1));
+                    test.setTextMon(String.valueOf(calendar.get(Calendar.MONTH) + 1));
                     test.setTextDay(String.valueOf(calendar.get(Calendar.DATE)));
                     test.setTextHour(String.valueOf(calendar.get(Calendar.HOUR_OF_DAY)));
                     test.setTextMin(String.valueOf(calendar.get(Calendar.MINUTE)));
@@ -91,11 +91,11 @@ public class Main3Activity extends AppCompatActivity {
                     List<textContext> list2 = DataSupport.order("textNum desc").find(textContext.class);
                     list2 = list2.subList(0, 1);
                     for (textContext kk : list2) {
-                        test.setTextNum(String.valueOf(Integer.valueOf(kk.getTextNum()) + 1));
+                        test.setTextNum(kk.getTextNum() + 1);
                     }
                     test.setTextContext(editText.getText().toString());
                     test.setTextYear(String.valueOf(calendar.get(Calendar.YEAR)));
-                    test.setTextMon(String.valueOf(Integer.valueOf(calendar.get(Calendar.MONTH)) + 1));
+                    test.setTextMon(String.valueOf(calendar.get(Calendar.MONTH) + 1));
                     test.setTextDay(String.valueOf(calendar.get(Calendar.DATE)));
                     test.setTextHour(String.valueOf(calendar.get(Calendar.HOUR_OF_DAY)));
                     test.setTextMin(String.valueOf(calendar.get(Calendar.MINUTE)));
@@ -104,10 +104,10 @@ public class Main3Activity extends AppCompatActivity {
                 } else if (!"".equals(editText.getText().toString()) && textNum == null && findfirst == null) {
                     //first
                     textContext test = new textContext();
-                    test.setTextNum("1");
+                    test.setTextNum(1);
                     test.setTextContext(editText.getText().toString());
                     test.setTextYear(String.valueOf(calendar.get(Calendar.YEAR)));
-                    test.setTextMon(String.valueOf(Integer.valueOf(calendar.get(Calendar.MONTH)) + 1));
+                    test.setTextMon(String.valueOf(calendar.get(Calendar.MONTH) + 1));
                     test.setTextDay(String.valueOf(calendar.get(Calendar.DATE)));
                     test.setTextHour(String.valueOf(calendar.get(Calendar.HOUR_OF_DAY)));
                     test.setTextMin(String.valueOf(calendar.get(Calendar.MINUTE)));

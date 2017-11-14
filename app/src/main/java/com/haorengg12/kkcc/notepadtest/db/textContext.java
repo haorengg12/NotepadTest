@@ -9,7 +9,7 @@ import org.litepal.crud.DataSupport;
 public class textContext extends DataSupport {
 
     //序号
-    private String textNum;
+    private int textNum;
     //时间
     private String textYear;
     private String textMon;
@@ -22,11 +22,11 @@ public class textContext extends DataSupport {
     private String textTag;//text的类别的标签
 
     //getter & setter
-    public String getTextNum() {
+    public int getTextNum() {
         return textNum;
     }
 
-    public void setTextNum(String textNum) {
+    public void setTextNum(int textNum) {
         this.textNum = textNum;
     }
 

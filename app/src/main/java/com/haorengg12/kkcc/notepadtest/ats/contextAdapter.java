@@ -59,7 +59,7 @@ public class contextAdapter extends RecyclerView.Adapter<contextAdapter.ViewHold
                 textContext context = mtextContext.get(position);
                 textContext textContexts = DataSupport.findLast(textContext.class);
                 Intent intent = new Intent(mContext, Main3Activity.class);
-                intent.putExtra(Main3Activity.TEXT_NUM, context.getTextNum());
+                intent.putExtra(Main3Activity.TEXT_NUM, String.valueOf(context.getTextNum()));
                 mContext.startActivity(intent);
             }
         });
@@ -80,7 +80,7 @@ public class contextAdapter extends RecyclerView.Adapter<contextAdapter.ViewHold
         } else {
             holder.text_Time.setText(tex.getTextYear() + "/" + tex.getTextMon() + "/" + tex.getTextDay());
         }
-        holder.textNum.setText(tex.getTextNum());
+        holder.textNum.setText(String.valueOf(tex.getTextNum()));
         holder.context_text.setText(tex.getTextContext());
     }
 

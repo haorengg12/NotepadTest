@@ -25,9 +25,10 @@
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler1"
+            android:id="@+id/context_recy"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/cc"
             android:elevation="5dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
@@ -94,8 +95,8 @@
         <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="20dp"
-            android:layout_gravity="bottom|end">
+            android:layout_gravity="bottom|end"
+            android:elevation="20dp">
 
             <android.support.v4.widget.Space
                 android:layout_width="match_parent"

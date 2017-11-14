@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">备忘录</string>
+    <string name="longTestText">idusayudyuastduyastduyastduytasdyutasdyasuydtasyudtyusadtydasdsadasdasdusa</string>
+    <string name="midTestText">dhsuagduysgdyugsadyugsauydgsaudygas</string>
+    <string name="shortTestText">duhsagdgd</string>
+    <string name="longtimeText">2016/01/19</string>
+    <string name="shorttimeText">01/19</string>
 </resources>

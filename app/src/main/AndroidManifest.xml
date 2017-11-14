@@ -42,6 +42,9 @@
             android:launchMode="standard">
 
         </activity>
+        <activity android:name=".Main3Activity">
+
+        </activity>
     </application>
 
 </manifest>

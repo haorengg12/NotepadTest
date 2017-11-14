@@ -1,11 +1,15 @@
 package com.haorengg12.kkcc.notepadtest.db;
 
+import org.litepal.crud.DataSupport;
+
 /**
  * Created by 黄黄k on 2017-11-10.
  */
 
-public class textContext {
-    private int textNum;//序号
+public class textContext extends DataSupport {
+
+    //序号
+    private String textNum;
     //时间
     private String textYear;
     private String textMon;
@@ -18,11 +22,11 @@ public class textContext {
     private String textTag;//text的类别的标签
 
     //getter & setter
-    public int getTextNum() {
+    public String getTextNum() {
         return textNum;
     }
 
-    public void setTextNum(int textNum) {
+    public void setTextNum(String textNum) {
         this.textNum = textNum;
     }
 

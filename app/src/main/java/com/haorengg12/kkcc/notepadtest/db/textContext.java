@@ -20,6 +20,7 @@ public class textContext extends DataSupport {
     //基础信息
     private String textContext;
     private String textTag;//text的类别的标签
+    private int vis = 8;//gone
 
     //getter & setter
     public int getTextNum() {
@@ -92,5 +93,13 @@ public class textContext extends DataSupport {
 
     public void setTextTag(String textTag) {
         this.textTag = textTag;
+    }
+
+    public int getVis() {
+        return vis;
+    }
+
+    public void setVis(int vis) {
+        this.vis = vis;
     }
 }

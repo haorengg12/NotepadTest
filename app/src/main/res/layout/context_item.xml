@@ -14,6 +14,13 @@
         android:layout_gravity="center_vertical"
         android:orientation="horizontal">
 
+        <CheckBox
+            android:id="@+id/delete_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone" />
+
         <TextView
             android:id="@+id/textNum"
             android:layout_width="wrap_content"
@@ -35,6 +42,7 @@
                 android:gravity="center_horizontal"
                 android:maxLength="20"
                 android:maxLines="1"
+                android:text="@string/longTestText"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -51,6 +59,7 @@
                 android:gravity="center_horizontal"
                 android:maxLength="10"
                 android:maxLines="1"
+                android:text="@string/longtimeText"
                 android:textSize="20sp" />
 
             <ImageView

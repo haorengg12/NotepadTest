@@ -1,5 +1,6 @@
 package com.haorengg12.kkcc.notepadtest;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,12 +46,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CheckBox deleteSelect;
     MenuItem delete_menu;
     private static final String TAG = "MainActivity";
-    private static final int UPDATE_TEXT = 1;
+
+    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
-                case UPDATE_TEXT:
+                case 1:
                     initcontent2();
+                    break;
+                case 2:
+                    adapter.notifyDataSetChanged();//刷新
                     break;
                 default:
                     break;
@@ -72,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void run() {
                         Message msg = new Message();
-                        msg.what = UPDATE_TEXT;
+                        msg.what = 1;
                         handler.sendMessage(msg);
                     }
                 }).start();
@@ -177,7 +182,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void initcontent2() {
+    private void
+
+    initcontent2() {
         textContextList.clear();
         //show
         List<textContext> textContexts = DataSupport.order("textNum desc").find(textContext.class);
@@ -196,7 +203,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textContextList.add(text);
             }
         }
-        adapter.notifyDataSetChanged();//刷新
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message msg = new Message();
+                msg.what = 2;
+                handler.sendMessage(msg);
+            }
+        }).start();
     }
 
     @Override
